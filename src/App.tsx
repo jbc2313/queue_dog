@@ -1,12 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import './styles/App.css'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [showVite, setShowVite] = useState(false)
   return (
     <div className="App">
+      <Routes>
+        <Route  />
+      </Routes>
+      <button onClick={()=>setShowVite(!showVite)}>VITE</button>
+      {showVite && 
+      <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -27,6 +34,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      </>
+      }
     </div>
   )
 }
