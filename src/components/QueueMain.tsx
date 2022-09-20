@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { getBreeds } from '../util/fetchDog'; 
-
+import { getRandom } from '../util/rando'; 
 
 
 const Queue = () => {
 
-    const [doglist, setDoglist] = useState({});
+    const [doglist, setDoglist] = useState<string[]>();
     const [renders, setRenders] = useState<number>(0);
+    const [dogQueue, setDogQueue] = useState<string[]>();
+
 
     useEffect(() => {
        if(renders > 1){
@@ -21,12 +23,11 @@ const Queue = () => {
 
     }, [])
 
-    const fixList = () => {
-        
-        console.log(doglist);
+    setInterval(()=> {
+       const getDog = doglist[getRandom()] 
+       setDogQueue() 
 
-    }
-    
+        }, 3500) 
 
 
 
@@ -39,7 +40,8 @@ const Queue = () => {
 
     return (
         <div>
-            <button onClick={fixList}>GET LIST</button>
+            <button>GET LIST</button>
+            <p></p>
 
         </div>
     )
