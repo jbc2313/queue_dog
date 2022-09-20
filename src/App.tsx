@@ -1,16 +1,27 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './styles/App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import QueueView from './pages/QueueView'
+
 
 function App() {
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
   const [count, setCount] = useState(0)
   const [showVite, setShowVite] = useState(false)
   return (
     <div className="App">
       <Routes>
-        <Route  />
+        <Route path='queueView' element={<QueueView />}   />
       </Routes>
+      {location.pathname !== '/queueView' &&
+      <button onClick={()=>navigate('/queueView')}>GoToQUEUE</button>
+      }
+      <br/>
+      {location.pathname === '/queueView' ? <></> :      
+      <>
       <button onClick={()=>setShowVite(!showVite)}>VITE</button>
       {showVite && 
       <>
@@ -35,7 +46,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       </>
-      }
+      }</>}
     </div>
   )
 }
