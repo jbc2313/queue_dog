@@ -7,7 +7,7 @@ import QueueView from './pages/QueueView'
 
 function App() {
   const location = useLocation();
-  console.log(location);
+//  console.log(location);
   const navigate = useNavigate();
   const [count, setCount] = useState(0)
   const [showVite, setShowVite] = useState(false)
