@@ -5,16 +5,28 @@ type Props = {
     doggoList: string[] | undefined;
 }
 
-const DogList: React.FC<Props> = ({ doggoList }) => {
+const DogList: React.FC = () => {
+
+    const [stackList, setStackList] = useState<string[] | undefined>()
 
 
+    setInterval(()=> {
+        const cpy = dogstack.list();
+        const cpylist: string[] = []
+        const updater = cpy?.forEach(dog => {
+                cpylist.push(dog)
+
+            })
+        setStackList(cpylist)
+
+    }, 2000)
 
     return (
         <div>
             <ul>
-                {doggoList != undefined ? 
+                {stackList != undefined ? 
                     <>
-                      {doggoList?.map(dog => <li>{dog}</li>)} 
+                      {stackList?.map(dog => <li>{dog}</li>)} 
                     </>
                     :
                     <>

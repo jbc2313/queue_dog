@@ -37,13 +37,13 @@ const StackMain = () => {
             dogstack.push(doggo)
             console.log(doggo)
             console.log('stacklist',dogstack.list())
-            const cpy = dogstack.list();
-            const newList: string[] = []
-            const fix = cpy?.forEach(item => {
+          //  const cpy = dogstack.list();
+           // const newList: string[] = []
+           // const fix = cpy?.forEach(item => {
                // console.log('foreachitem',item)
-                newList.push(item)
-            })
-            setStateList(newList)
+            //    newList.push(item)
+           // })
+           // setStateList(newList)
         }
 
     }, 5000)
@@ -51,8 +51,8 @@ const StackMain = () => {
 
     return (
         <div>
-           <h2>NEED TO REWORK THIS WHOLE THING</h2>
-            <DogList doggoList={stateList} />
+           <h2>Dogs in the Stack</h2>
+            <DogList />
         </div>
     )
 }
