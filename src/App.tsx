@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './styles/App.css'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
-import QueueView from './pages/QueueView'
+import StackView from './pages/StackView'
 
 
 function App() {
@@ -14,13 +14,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='queueView' element={<QueueView />}   />
+        <Route path='stackView' element={<StackView />}   />
       </Routes>
-      {location.pathname !== '/queueView' &&
-      <button onClick={()=>navigate('/queueView')}>GoToQUEUE</button>
+      {location.pathname !== '/stackView' &&
+      <button onClick={()=>navigate('/stackView')}>GoToSTACK</button>
       }
       <br/>
-      {location.pathname === '/queueView' ? <></> :      
+      {location.pathname === '/stackView' ? <></> :      
       <>
       <button onClick={()=>setShowVite(!showVite)}>VITE</button>
       {showVite && 

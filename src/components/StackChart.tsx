@@ -1,8 +1,8 @@
-import { useRef } from 'react'
+import react, { useRef } from 'react'
 
 
 
-const StackChart = () => {
+const Stackchart = () => {
 
 
     return (
@@ -18,3 +18,5 @@ const StackChart = () => {
 
 
 }
+
+export default Stackchart;
