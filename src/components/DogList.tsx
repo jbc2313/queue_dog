@@ -1,18 +1,30 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { dogstack } from '../util/stackClass'
 
 type Props = {
-    dogName: string;
-    key: number;
+    doggoList: string[] | undefined;
 }
 
-const DogList: React.FC<Props> = ({dogName, key}) => {
+const DogList: React.FC<Props> = ({ doggoList }) => {
+
 
 
     return (
-        <ul>
-            <li>{dogName}, # {key}</li>
-        </ul>
+        <div>
+            <ul>
+                {doggoList != undefined ? 
+                    <>
+                      {doggoList?.map(dog => <li>{dog}</li>)} 
+                    </>
+                    :
+                    <>
+                        <p>Stack EMPTY</p>
+                    </>
+
+                }
+            </ul>
+        </div>
+
     )
 
 }

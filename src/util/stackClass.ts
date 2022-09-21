@@ -8,7 +8,7 @@ interface TypeStack<T> {
     size(): number;
 }
 
-export class Stack<T> implements TypeStack<T> {
+class Stack<T> implements TypeStack<T> {
     private storage: T[] = [];
 
     constructor(private capacity: number = Infinity) {}
@@ -32,5 +32,10 @@ export class Stack<T> implements TypeStack<T> {
         return this.storage.length;
     }
     
+    list(): T[] | undefined {
+        return this.storage
+
+    }
 }
 
+export const dogstack = new Stack<string>();
