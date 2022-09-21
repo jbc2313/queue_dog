@@ -37,16 +37,9 @@ const StackMain = () => {
             dogstack.push(doggo)
             console.log(doggo)
             console.log('stacklist',dogstack.list())
-          //  const cpy = dogstack.list();
-           // const newList: string[] = []
-           // const fix = cpy?.forEach(item => {
-               // console.log('foreachitem',item)
-            //    newList.push(item)
-           // })
-           // setStateList(newList)
         }
 
-    }, 5000)
+    }, 1000)
 
 
     return (

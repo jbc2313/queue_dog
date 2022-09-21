@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { dogstack } from '../util/stackClass'
+import { cleanUp } from '../util/cleanStack'
 
 type Props = {
     doggoList: string[] | undefined;
@@ -8,7 +9,7 @@ type Props = {
 const DogList: React.FC = () => {
 
     const [stackList, setStackList] = useState<string[] | undefined>()
-
+    const [stackSize, setStackSize] = useState<number>()
 
     setInterval(()=> {
         const cpy = dogstack.list();
@@ -18,11 +19,22 @@ const DogList: React.FC = () => {
 
             })
         setStackList(cpylist)
+        setStackSize(dogstack.size())
+        if(dogstack.size() > 12) {
+            performance.measure('Begin')
+            for(let i = dogstack.size();i > 0;i--){
+                 cleanUp()
+            }
 
-    }, 2000)
+        }
+
+
+    }, 500)
+
 
     return (
         <div>
+            <h3>{dogstack.size()}</h3>
             <ul>
                 {stackList != undefined ? 
                     <>
