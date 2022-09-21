@@ -10,9 +10,19 @@ interface tableItem{
 
 }
 
+type tableItemList = tableItem[]
+
+let TIList: tableItemList | undefined 
 
 export const initTimer = (dogList: string[]) => {
-    
+   TIList = dogList.map((dog) => {
+      return {
+        name: dog,
+        timeIn: 0,
+        timeOut: 0
+      }
+   }) 
+   console.log('TIList created', TIList)
 
 
 }
@@ -23,6 +33,12 @@ export const initTimer = (dogList: string[]) => {
 
 export const handleTime = (dogName: string) => {
 
+
+
+}
+
+
+const createTable = (dogList: string[]) => {
 
 
 }

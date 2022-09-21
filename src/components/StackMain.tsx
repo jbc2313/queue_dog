@@ -3,7 +3,7 @@ import { getBreeds } from '../util/fetchDog';
 import { getRandom } from '../util/rando'; 
 import DogList from './DogList';
 import { dogstack } from '../util/stackClass'  
-
+import { initTimer } from '../util/timeTrack'
 
 
 const StackMain = () => {
@@ -18,6 +18,7 @@ const StackMain = () => {
                 const list = Object.keys(res)
                 dogsList.current = list
                 render.current = 1
+                initTimer(list)
                 console.log(dogsList.current)
             })
        }
