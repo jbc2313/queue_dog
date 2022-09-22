@@ -35,7 +35,7 @@ const Stackchart: React.FC = () => {
             },
             title: {
                 display: true,
-                text: 'Chart.js Bar Chart',
+                text: 'Total Stack Time Bar Graph',
             },
         },
     }

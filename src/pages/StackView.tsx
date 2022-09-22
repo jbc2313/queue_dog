@@ -6,9 +6,9 @@ const QueueView = () => {
 
     return (
         <div>
-            <h1>The Doggy Stack Will Be HERE</h1>
+            <h1>Dog Stack</h1>
+            <h3>doggo data visualized</h3>
             <StackMain />
-
         </div>
 
 
