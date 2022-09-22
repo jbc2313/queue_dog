@@ -4,7 +4,7 @@ import { getRandom } from '../util/rando';
 import DogList from './DogList';
 import { dogstack } from '../util/stackClass'  
 import { initTimer, startTime } from '../util/timeTrack'
-
+import Stackchart from './StackChart';
 
 const StackMain = () => {
     const render = useRef<number>(0); 
@@ -45,9 +45,11 @@ const StackMain = () => {
     }, 1000)
 
 
+
     return (
         <div>
-           <h2>Dogs in the Stack</h2>
+            <Stackchart />
+            <h2>Dogs in the Stack</h2>
             <DogList />
         </div>
     )

@@ -76,6 +76,24 @@ export const showTimes = () => {
 }
 
 
+export const dogNames = () => {
+    if(TIList == undefined) return
+    const names: string[] | undefined = TIList.map(dog => {
+        return dog.name
+    })
+    return names
+
+}
+
+export const expTimes = () => {
+    if(TIList == undefined) return
+    const data: number[] | undefined = TIList.map(dog => {
+        return dog.totTime
+    })
+    return data
+
+}
+
 const createTable = (dogList: string[]) => {
 
 
