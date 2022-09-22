@@ -31,10 +31,41 @@ export const initTimer = (dogList: string[]) => {
 
 
 
-export const handleTime = (dogName: string) => {
+export const startTime = (dogName: string) => {
+    if(TIList == undefined){
+        return
+    }
+    TIList.forEach(dog => {
+        if(dog.name === dogName){
+            dog.timeIn = performance.now()
+
+        }
+    })
 
 
+}
 
+export const stopTime = (dogName: string) => {
+    if(TIList == undefined){
+        return
+    }
+    TIList.forEach(dog => {
+        if(dog.name === dogName){
+            dog.timeOut = performance.now()
+        }
+    })
+    
+}      
+
+export const showTimes = () => {
+    if(TIList == undefined) return
+    const viewer = TIList.map(dog => { 
+        console.log('DOG NAME =', dog.name)
+        console.log('DOG T_IN =', dog.timeIn)
+        console.log('DOG T_OUT =', dog.timeOut)
+        console.log('-------------')
+        
+    })
 }
 
 
