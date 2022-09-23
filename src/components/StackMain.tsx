@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { getBreeds } from '../util/fetchDog'; 
-import { getRandom } from '../util/rando'; 
+import { randDoggo } from '../util/rando'; 
 import DogList from './DogList';
 import { dogstack } from '../util/stackClass'  
 import { initTimer, startTime } from '../util/timeTrack'
@@ -30,8 +30,25 @@ const StackMain = () => {
         if(dogsList === undefined){
             return
         } else {
-            const length: number = dogsList.current.length - 1 
-            const doggo = dogsList.current[getRandom(0, length )]
+            //const length: number = dogsList.current.length - 1 
+            //const doggo = dogsList.current[getRandom(0, length )]
+            
+            let doggo = randDoggo(dogsList.current)
+            const currDogs = dogstack.list()
+            if(currDogs == undefined) return
+            const islisted = currDogs.find(dog => dog === doggo)
+            if(islisted === undefined){
+                // good to continue
+                console.log('we found a rando doggo first try!')
+            } else {
+                // doggo is already in stack, need to find another.
+                console.log('doggo is already in stack, lets find another')
+                do{
+                    doggo = randDoggo(dogsList.current)
+                }while(doggo === islisted)
+                console.log('the islisted doggo is ===', islisted)
+                console.log('the newdoggo is ====', doggo)
+            }
             if(doggo === undefined) {
                 return 
             }

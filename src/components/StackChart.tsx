@@ -1,4 +1,4 @@
-import react, { useRef, useState } from 'react'
+import react, {  useState } from 'react'
 import { dogstack } from '../util/stackClass'
 import { dogNames, expTimes } from '../util/timeTrack'
 import type { ChartData, ChartOptions } from 'chart.js'
@@ -72,7 +72,7 @@ const Stackchart: React.FC = () => {
 
     
     return (
-            <Bar options={options} data={data} />
+            <Bar options={options} width={600} height={700} data={data} />
     )
 
 

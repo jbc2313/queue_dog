@@ -55,7 +55,15 @@ export const stopTime = (dogName: string) => {
         if(dog.name === dogName){
             dog.timeOut = performance.now()
             const timetmp = dog.timeOut - dog.timeIn
-            dog.totTime = timetmp + dog.totTime
+            const tottimetmp = dog.totTime + timetmp
+            dog.totTime = tottimetmp
+            // check the times 
+            console.log(dog.name)
+            console.log('timeIN----',dog.timeIn)
+            console.log('timeOUT----',dog.timeOut)
+            console.log('TOTTIME----',dog.totTime)
+            console.log('TIMETEMPERARY------',timetmp)
+            console.log('------NEXT DOG--------')
             dog.timeIn = 0,
             dog.timeOut = 0
         }
@@ -88,7 +96,7 @@ export const dogNames = () => {
 export const expTimes = () => {
     if(TIList == undefined) return
     const data: number[] | undefined = TIList.map(dog => {
-        return dog.totTime
+        return dog.totTime / 1000
     })
     return data
 

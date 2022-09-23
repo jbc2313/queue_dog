@@ -9,3 +9,10 @@ export const getRandom = (min: number, max: number) => {
 
 
     }
+
+export const randDoggo = (arr: string[]) => { 
+    const length: number = arr.length - 1 
+    const doggo: string = arr[getRandom(0, length)]
+    return doggo
+
+}

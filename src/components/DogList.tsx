@@ -23,10 +23,10 @@ const DogList: React.FC = () => {
         setStackSize(dogstack.size())
         if(dogstack.size() > 12) {
             performance.measure('Begin')
-            for(let i = dogstack.size();i > 0;i--){
-                 cleanUp()
+            for(let i = dogstack.size();i > 0;i--){  
+                cleanUp()
             }
-            showTimes()
+           // showTimes()
 
         }
 
