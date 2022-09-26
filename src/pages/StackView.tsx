@@ -2,7 +2,7 @@ import StackMain from "../components/StackMain";
 
 
 
-const QueueView = () => {
+const StackView = () => {
 
     return (
         <div>
@@ -17,4 +17,4 @@ const QueueView = () => {
 }
 
 
-export default QueueView;
+export default StackView;
