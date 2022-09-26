@@ -22,4 +22,14 @@ describe('test list()', () => {
     })
 })
 
+describe('test peek()', () => {
+    test('show return pug', () => {
+        expect(dogstack.peek()).toBe('pug')
+    })
+})
 
+describe('test size()', () => {
+    test('should return 2', () => {
+        expect(dogstack.size()).toBe(2)
+    })
+})
