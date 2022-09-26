@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { dogstack } from '../util/stackClass'
 import { cleanUp } from '../util/cleanStack'
 import { showTimes } from '../util/timeTrack'

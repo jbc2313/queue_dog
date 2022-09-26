@@ -7,6 +7,7 @@ export default async (): Promise<Config.InitialOptions> => {
      color: "greenBright",
    },
    verbose: true,
+   reporters: ['default'],
 //   setupFiles: ["dotenv/config"],
    testMatch: ["**/**/*.test.ts"],
    testEnvironment: "jsdom",
