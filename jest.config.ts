@@ -12,7 +12,6 @@ export default async (): Promise<Config.InitialOptions> => {
    testMatch: ["**/**/*.test.ts"],
    testEnvironment: "jsdom",
    detectOpenHandles: true,
-   collectCoverage: true,
    transform: { "^.+\\.tsx?$": "ts-jest" },
   // globalTeardown: "<rootDir>/src/tests/jest-globals-teardown.ts",
    forceExit: true,
