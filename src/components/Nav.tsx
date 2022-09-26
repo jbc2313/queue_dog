@@ -9,8 +9,8 @@ const Nav = () => {
 
     return (
         <ul>
-            <li className='list' onClick={() => navigate('/stackView')}>Stack</li>
-            <li className='list' onClick={() => navigate('/queueView')}>Queue</li>
+            <li className='link' onClick={() => navigate('/stackView')}>Stack</li>
+            <li className='link' onClick={() => navigate('/queueView')}>Queue</li>
         </ul>
 
     )

@@ -1,4 +1,7 @@
 .link {
-    
+
+    margin: 10px;
+    cursor: pointer;
+    list-style: none;        
 
 }
