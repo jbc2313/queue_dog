@@ -6,7 +6,7 @@ const QueueView = () => {
 
     return (
         <div>
-        <h2>Queue for doggos will be here</h2>
+        <h2><u>Doggo Queue</u></h2>
         <QueueMain />
         </div>
     )
