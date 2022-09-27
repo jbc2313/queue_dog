@@ -1,3 +1,4 @@
+import { proxy } from 'valtio'
 
 interface TypeQueue<T> {
     enqueue(item: T): void;
@@ -36,3 +37,5 @@ class Queue<T> implements TypeQueue<T> {
 
 
 export const dogqueue = new Queue<string>
+
+export const myqueue = proxy(new Queue<string>)
