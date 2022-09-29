@@ -12,28 +12,25 @@ type Props = {
 const DogList: React.FC<Props> = ({ doggoList }: Props) => {
 
     const [stackList, setStackList] = useState<string[] | undefined>()
-    const [stackSize, setStackSize] = useState<number>()
 
     const clearList = () => {
         setTimeout(()=> {
-            const cpy = dogstack.list();
-            const cpylist: string[] = []
-            const updater = cpy?.forEach(dog => {
-                cpylist.push(dog)
-
-            })
-            setStackList(cpylist)
-            setStackSize(dogstack.size())
             if(dogstack.size() > 12) {
-                performance.measure('Begin')
+                // dont need this
+                //performance.measure('Begin')
                 for(let i = dogstack.size();i > 0;i--){  
                     cleanUp()
                 }
+                updateList()
            // showTimes()
             }
 
 
         }, 500)
+    }
+    
+    const updateList = () => {
+        setStackList(dogstack.list())
     }
 
 
@@ -45,7 +42,9 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
             //const length: number = dogsList.current.length - 1 
             //const doggo = dogsList.current[getRandom(0, length )]
             if(doggoList == undefined) return
+                console.log('this is doggolist', doggoList)
             let doggo = randDoggo(doggoList)
+                console.log('this is doggo', doggo)
             const currDogs = dogstack.list()
             if(currDogs == undefined) return
             const islisted = currDogs.find(dog => dog === doggo)
@@ -62,13 +61,16 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
                 console.log('the newdoggo is ====', doggo)
             }
             if(doggo === undefined) {
+                console.log('lost the doggo?? how?')
                 return 
             }
             dogstack.push(doggo)
             console.log(doggo)
             console.log('stacklist',dogstack.list())
             startTime(doggo)
-            if(dogstack.size() === 15){
+            if(dogstack.size() !== 15){
+                updateList()
+                console.log('about to hit looper')
                 looper()
             }else{
                 clearList()
@@ -83,7 +85,7 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
 
     return (
         <div>
-            <button>Start Sim</button>
+            <button onClick={sim} >Start Sim</button>
             <h3>{dogstack.size()}</h3>
             <ul>
                 {stackList != undefined ? 

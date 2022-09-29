@@ -7,18 +7,18 @@ import Stackchart from './StackChart';
 
 const StackMain = () => {
     const render = useRef<number>(0); 
-    const dogsList = useRef<string[]>([]); 
-    const [stateList, setStateList] = useState<string[]>();
+    const [dogsList, setDogsList] = useState<string[]>() 
+    const [stateList, setStateList] = useState<string[]>([]);
 
     useEffect(() => {
        if(render.current === 0) {
             getBreeds()
             .then(res => {
                 const list = Object.keys(res)
-                dogsList.current = list
+                setDogsList(list)
                 render.current = 1
                 initTimer(list)
-                console.log(dogsList.current)
+                console.log(dogsList)
             })
        }
 
@@ -32,7 +32,7 @@ const StackMain = () => {
         <div>
             <Stackchart />
             <h2>Dogs in the Stack</h2>
-            <DogList doggoList={dogsList.current}  />
+           {dogsList === undefined ? <h1>Dogs loading..</h1> : <DogList doggoList={dogsList} />}
         </div>
     )
 }
