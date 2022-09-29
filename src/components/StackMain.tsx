@@ -32,7 +32,7 @@ const StackMain = () => {
         <div>
             <Stackchart />
             <h2>Dogs in the Stack</h2>
-            <DogList dogsList={dogsList} />
+            <DogList doggoList={dogsList.current}  />
         </div>
     )
 }

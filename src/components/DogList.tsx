@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, ReactComponentElement } from 'react'
 import { dogstack } from '../util/stackClass'
 import { cleanUp } from '../util/cleanStack'
 import { showTimes } from '../util/timeTrack'
@@ -9,12 +9,10 @@ type Props = {
     doggoList: string[] | undefined;
 }
 
-const DogList: React.FC<Props> = ({ doggoList }) => {
+const DogList: React.FC<Props> = ({ doggoList }: Props) => {
 
     const [stackList, setStackList] = useState<string[] | undefined>()
     const [stackSize, setStackSize] = useState<number>()
-    const dogsList = useRef<string[]>()
-    dogsList.current = doggoList
 
     const clearList = () => {
         setTimeout(()=> {
@@ -41,13 +39,13 @@ const DogList: React.FC<Props> = ({ doggoList }) => {
 
     
     const sim = () => {
-        if(dogsList === undefined){
+        if(doggoList === undefined){
             return
         } else {
             //const length: number = dogsList.current.length - 1 
             //const doggo = dogsList.current[getRandom(0, length )]
-            if(dogsList.current == undefined) return
-            let doggo = randDoggo(dogsList.current)
+            if(doggoList == undefined) return
+            let doggo = randDoggo(doggoList)
             const currDogs = dogstack.list()
             if(currDogs == undefined) return
             const islisted = currDogs.find(dog => dog === doggo)
@@ -58,7 +56,7 @@ const DogList: React.FC<Props> = ({ doggoList }) => {
                 // doggo is already in stack, need to find another.
                 console.log('doggo is already in stack, lets find another')
                 do{
-                    doggo = randDoggo(dogsList.current)
+                    doggo = randDoggo(doggoList)
                 }while(doggo === islisted)
                 console.log('the islisted doggo is ===', islisted)
                 console.log('the newdoggo is ====', doggo)
@@ -70,10 +68,16 @@ const DogList: React.FC<Props> = ({ doggoList }) => {
             console.log(doggo)
             console.log('stacklist',dogstack.list())
             startTime(doggo)
+            if(dogstack.size() === 15){
+                looper()
+            }else{
+                clearList()
+            }
+
         }
     }
 
-
+    const looper = () => setTimeout(sim, 4000)
 
 
 
