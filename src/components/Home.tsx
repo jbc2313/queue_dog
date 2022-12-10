@@ -1,8 +1,9 @@
 import {useState} from "react";
-
+import { logSent } from "../util/dogToys";
 
 const Home = () => {
 
+logSent();
 
     return (
         <div>
