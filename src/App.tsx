@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import StackView from './pages/StackView'
 import QueueView from './pages/QueueView'
 import Nav from './components/Nav'
+import Home from './components/Home'
 
 function App() {
   const location = useLocation();
@@ -15,6 +16,7 @@ return (
     <div className="App">
       <Nav /> 
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='stackView' element={<StackView />} />
         <Route path='queueView' element={<QueueView /> } />
       </Routes>
