@@ -20,9 +20,9 @@ const dogs: Record<DogName, DogToy> = {
 
 export function logSent() {
 
-    console.log(`Dog 1: ${dogs.Darrel}`);
-    console.log(`Dog 2: ${dogs.Boris}`);
-    console.log(`Dog 3: ${dogs.Toby}`);
+    console.log(`Dog 1: ${dogs.Darrel.language}`);
+    console.log(`Dog 2: ${dogs.Boris.language}`);
+    console.log(`Dog 3: ${dogs.Toby.language}`);
 
 
 }
