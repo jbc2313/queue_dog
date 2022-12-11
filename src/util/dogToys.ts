@@ -26,3 +26,7 @@ export function logSent() {
 
 
 }
+
+export function getDogs() {
+    return dogs
+}
