@@ -8,7 +8,7 @@ const dogs = getDogs();
 
     return (
         <div>
-            <p>THIS IS THE HOME?</p>
+            <p>Home Page</p>
             <p>This weeks star dogs, favorite languages</p>
             <ul>
                 <li>Boris: {dogs.Boris.language}</li>
