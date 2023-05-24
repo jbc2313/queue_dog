@@ -1,7 +1,6 @@
-import {useState} from "react";
 import { logSent, getDogs } from "../util/dogToys";
 
-const Home = () => {
+const Home  = () => {
 
 logSent();
 const dogs = getDogs();
