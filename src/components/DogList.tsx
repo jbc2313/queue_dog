@@ -1,4 +1,4 @@
-import React, { useState, useRef, ReactComponentElement } from 'react'
+import React, { useState, useEffect } from 'react'
 import { dogstack } from '../util/stackClass'
 import { cleanUp } from '../util/cleanStack'
 import { showTimes } from '../util/timeTrack'
@@ -33,7 +33,12 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
         setStackList(dogstack.list())
     }
 
+    useEffect(() => {
+        console.log('list should update')
 
+
+
+    },[stackList])
     
     const sim = () => {
         if(doggoList === undefined){

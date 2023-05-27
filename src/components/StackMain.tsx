@@ -8,7 +8,6 @@ import Stackchart from './StackChart';
 const StackMain = () => {
     const render = useRef<number>(0); 
     const [dogsList, setDogsList] = useState<string[]>() 
-    const [stateList, setStateList] = useState<string[]>([]);
 
     useEffect(() => {
        if(render.current === 0) {
@@ -23,7 +22,6 @@ const StackMain = () => {
        }
 
     })
-
 
 
 
