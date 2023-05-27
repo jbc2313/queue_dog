@@ -1,45 +1,47 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { dogstack } from '../util/stackClass'
 import { cleanUp } from '../util/cleanStack'
 import { showTimes } from '../util/timeTrack'
 import { randDoggo } from '../util/rando' 
-import { initTimer, startTime } from '../util/timeTrack'
+import { startTime } from '../util/timeTrack'
 
 type Props = {
-    doggoList: string[] | undefined;
+    doggoList: string[] | undefined,
+    setStack: any,
+    setStackSize: any,
 }
 
-const DogList: React.FC<Props> = ({ doggoList }: Props) => {
+const DogList: React.FC<Props> = ({ doggoList, setStack, setStackSize }: Props) => {
 
     const [stackList, setStackList] = useState<string[] | undefined>()
 
     const clearList = () => {
         setTimeout(()=> {
-            if(dogstack.size() > 12) {
+            if(dogstack.size() > 4) {
                 // dont need this
                 //performance.measure('Begin')
                 for(let i = dogstack.size();i > 0;i--){  
                     cleanUp()
                 }
+
                 updateList()
+                // continue the stack filling
+                sim()
            // showTimes()
             }
 
 
         }, 500)
+
     }
     
     const updateList = () => {
         setStackList(dogstack.list())
+        setStack(dogstack.list())
+        setStackSize(dogstack.size())
     }
 
-    useEffect(() => {
-        console.log('list should update')
 
-
-
-    },[stackList])
-    
     const sim = () => {
         if(doggoList === undefined){
             return
@@ -73,7 +75,7 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
             console.log(doggo)
             console.log('stacklist',dogstack.list())
             startTime(doggo)
-            if(dogstack.size() !== 15){
+            if(dogstack.size() !== 5){
                 updateList()
                 console.log('about to hit looper')
                 looper()
@@ -88,22 +90,10 @@ const DogList: React.FC<Props> = ({ doggoList }: Props) => {
 
 
 
+
     return (
         <div>
             <button onClick={sim} >Start Sim</button>
-            <h3>{dogstack.size()}</h3>
-            <ul>
-                {stackList != undefined ? 
-                    <>
-                      {stackList?.map(dog => <li>{dog}</li>)} 
-                    </>
-                    :
-                    <>
-                        <p>Stack EMPTY</p>
-                    </>
-
-                }
-            </ul>
         </div>
 
     )
