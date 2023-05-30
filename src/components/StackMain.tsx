@@ -27,11 +27,10 @@ const StackMain = () => {
     return (
         <div>
             <Stackchart />
-            <h2>Dogs in the Stack</h2>
            {dogsList === undefined ? <h1>Dogs loading..</h1> : <DogList doggoList={dogsList} setStack={setStack} setStackSize={setStackSize} />}
 
             {/*  // moved from DogList compnonent */}
-            <h3>Dogs in Stack: {stackSize}</h3>
+            <h3># of dogs currently in Stack: {stackSize}</h3>
             <ul>
                 {stack != undefined ?
                     <>

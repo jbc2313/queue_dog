@@ -4,6 +4,7 @@ import './styles/App.css'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import StackView from './pages/StackView'
 import QueueView from './pages/QueueView'
+import About from './pages/About'
 import Nav from './components/Nav'
 import Home from './components/Home'
 
@@ -19,6 +20,7 @@ return (
         <Route path='/' element={<Home />} />
         <Route path='stackView' element={<StackView />} />
         <Route path='queueView' element={<QueueView /> } />
+        <Route path='About' element={<About />} />
       </Routes>
 
      </div>
