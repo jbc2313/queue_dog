@@ -7,9 +7,18 @@ interface DogToy {
 
 type DogName = "Darrel" | "Boris" | "Toby";
 
+// first three langs for Doggos
 const langOne = randProgrammingLanguage();
 const langTwo = randProgrammingLanguage();
 const langThree = randProgrammingLanguage();
+
+// Three more langs
+const langFour = randProgrammingLanguage();
+const langFive = randProgrammingLanguage();
+const langSix = randProgrammingLanguage();
+
+
+
 
 
 const dogs: Record<DogName, DogToy> = {
