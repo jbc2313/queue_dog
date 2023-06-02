@@ -19,8 +19,6 @@ const langSix = randProgrammingLanguage();
 
 
 
-
-
 const dogs: Record<DogName, DogToy> = {
     Darrel: { language: langOne, used: true },
     Boris: { language: langTwo, used: false },
@@ -38,4 +36,17 @@ export function logSent() {
 
 export function getDogs() {
     return dogs
+}
+
+export function getAllLangs() {
+    const langArray = [];
+    langArray.push(langOne);
+    langArray.push(langTwo);
+    langArray.push(langThree);
+    langArray.push(langFour);
+    langArray.push(langFive);
+    langArray.push(langSix);
+
+    return langArray;
+
 }
