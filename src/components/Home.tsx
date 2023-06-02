@@ -1,9 +1,11 @@
-import { logSent, getDogs } from "../util/dogToys";
+import { logSent, getDogs, getAllLangs } from "../util/dogToys";
 
 const Home  = () => {
 
 logSent();
 const dogs = getDogs();
+const langs = getAllLangs();
+console.log(langs)
 
     return (
         <div>
@@ -14,6 +16,16 @@ const dogs = getDogs();
                 <li>Toby: {dogs.Toby.language}</li>
                 <li>Darrel: {dogs.Darrel.language}</li>
             </ul>
+            <div>
+                <p>All Langs available</p>
+                <ul>
+                {langs.map((lang: any)=> {
+                    <li>
+                       {lang}
+                    </li>
+                })}
+                </ul>
+            </div>
         </div>
     )
 }

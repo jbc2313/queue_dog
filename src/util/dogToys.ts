@@ -38,8 +38,9 @@ export function getDogs() {
     return dogs
 }
 
+
+const langArray: string[] = [];
 export function getAllLangs() {
-    const langArray = [];
     langArray.push(langOne);
     langArray.push(langTwo);
     langArray.push(langThree);
