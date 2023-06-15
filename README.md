@@ -1,4 +1,6 @@
-# DOG DATA FUN TIME
+# DOG Queue
+
+## A queue of dogs waiting at a bone dispensary..
 
 > I am learning about data structures and algorithms.
 > This is my first attempt at implementing a Queue and a Stack.
