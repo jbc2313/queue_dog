@@ -12,7 +12,12 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+// 
 // this needs to be completely reworked, i dont like it
+// 
+// still need to look into this..
+//
+
 return (
     <div className="App">
       <Nav /> 
