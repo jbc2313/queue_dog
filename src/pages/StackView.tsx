@@ -1,6 +1,6 @@
 import StackMain from "../components/StackMain";
 
-
+// page for stack
 
 const StackView = () => {
 
